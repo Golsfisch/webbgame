@@ -1,0 +1,54 @@
+:root{
+  --bg:#0b1020;
+  --panel:#111827;
+  --accent:#e6f1ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  background: linear-gradient(180deg, #071029, #0b1020 60%);
+  color:var(--accent);
+  padding:18px;
+}
+
+#ui{
+  position:absolute;
+  top:14px;
+  left:14px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  z-index:10;
+}
+
+#title{font-weight:600;font-size:18px}
+#score{background:rgba(255,255,255,0.04);padding:8px 10px;border-radius:8px;font-weight:600}
+button{
+  background:#1f2937;color:var(--accent);border:1px solid rgba(255,255,255,0.04);
+  padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;
+}
+button:active{transform:translateY(1px)}
+
+canvas{
+  border-radius:8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  touch-action: none; /* help mobile */
+}
+
+/* Overlay (Game Over) */
+#overlay{
+  position:absolute;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+#overlay .hidden{display:none}
+#overlayText{
+  background:rgba(0,0,0,0.6);
+  padding:24px;border-radius:12px;color:var(--accent);font-weight:700;margin-bottom:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
+}
+#overlay button{pointer-events:auto}
