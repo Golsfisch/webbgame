@@ -2,6 +2,12 @@
 // Save as game.js and open index.html in a browser.
 
 // ----------------------- Utilities -----------------------
+let highscore = Number(localStorage.getItem("topdown_highscore") || 0);
+
+
+
+
+
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 const rand = (min, max) => Math.random() * (max - min) + min;
 const dist2 = (a, b) => (a.x - b.x)**2 + (a.y - b.y)**2;
